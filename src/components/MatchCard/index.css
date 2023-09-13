@@ -1,0 +1,29 @@
+.MatchCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  background-color: #0f172a;
+  font-size: 10px;
+  width: 150px;
+  padding: 20px;
+  border-radius: 15px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+.matchCard-logo {
+  width: 100px;
+  height: 100px;
+}
+.won {
+  color: #18ed66;
+}
+.lost {
+  color: #e31a1a;
+}
+@media screen and (min-width: 768px) {
+  .MatchCard {
+    min-width: 170px;
+  }
+}

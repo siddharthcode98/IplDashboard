@@ -1,0 +1,9 @@
+.backgroundContainer {
+  background-image: url("https://assets.ccbp.in/frontend/react-js/ipl-dashboard-sm-bg.png");
+  height: 100vh;
+  background-size: cover;
+}
+h1 {
+  color: White;
+  font-family: "Bree Serif";
+}

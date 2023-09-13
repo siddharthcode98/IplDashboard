@@ -1,0 +1,16 @@
+.latest-match-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0f172a;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.image-logo {
+  width: 150px;
+}
+.leftAlign {
+  text-align: right;
+}

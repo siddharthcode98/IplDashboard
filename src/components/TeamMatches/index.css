@@ -1,0 +1,59 @@
+* {
+  margin: 0px;
+}
+
+h1 {
+  color: #ffffff;
+  font-family: "Bree Serif";
+}
+
+p {
+  color: #ffffff;
+  font-family: "Bree Serif";
+  font-size: 15px;
+}
+
+.background-color {
+  display: flex;
+  flex-direction: column;
+  padding: 100px;
+}
+.KKR_color {
+  background-image: linear-gradient(to bottom, #5755a7, #000000);
+}
+.RCB_color {
+  background-image: linear-gradient(to bottom, #a4261d, #000000);
+}
+.CSK_color {
+  background-image: linear-gradient(to bottom, #f7db00, #000000);
+}
+.SRH_color {
+  background-image: linear-gradient(to bottom, #f26d22, #000000);
+}
+.RR_color {
+  background-image: linear-gradient(to bottom, #5755a7, #000000);
+}
+.MI_color {
+  background-image: linear-gradient(to bottom, #13418b, #000000);
+}
+.KXP_color {
+  background-image: linear-gradient(to bottom, #d91c1f, #000000);
+}
+.DC_color {
+  background-image: linear-gradient(to bottom, #13418b, #000000);
+}
+.banner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.image-banner {
+  width: 100%;
+}
+.recent-Matches {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 5px;
+}
