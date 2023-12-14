@@ -13,10 +13,17 @@ p {
   font-size: 15px;
 }
 
-.background-color {
-  display: flex;
-  flex-direction: column;
-  padding: 100px;
+.back-btn {
+  background-color: #fff;
+  height: 1.5rem;
+  width: 3.5rem;
+  border-style: none;
+  border-radius: 10px;
+  margin-bottom: 0.2rem;
+  cursor: pointer;
+}
+.team-match-container {
+  padding: 5% 10% 5% 10%;
 }
 .KKR_color {
   background-image: linear-gradient(to bottom, #5755a7, #000000);
@@ -42,6 +49,15 @@ p {
 .DC_color {
   background-image: linear-gradient(to bottom, #13418b, #000000);
 }
+.team-main-container {
+  height: 100vh;
+  overflow-y: scroll;
+}
+.loader-container {
+  position: relative;
+  top: 50%;
+  left: 50%;
+}
 .banner-container {
   display: flex;
   align-items: center;
@@ -56,4 +72,8 @@ p {
   justify-content: center;
   flex-wrap: wrap;
   padding: 5px;
+}
+.pie-chart {
+  display: flex;
+  justify-content: center;
 }

@@ -1,16 +1,27 @@
 .latest-match-details {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   background-color: #0f172a;
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 10px;
 }
-
+.leftAlign {
+  text-align: right;
+}
 .image-logo {
   width: 150px;
 }
-.leftAlign {
-  text-align: right;
+@media screen and (max-width: 576px) {
+  .latest-match-details {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .leftAlign {
+    text-align: left;
+  }
+}
+@media screen and (min-width: 768px) {
+  .latest-match-details {
+    justify-content: center ;
+  }
 }

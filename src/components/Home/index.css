@@ -1,39 +1,42 @@
-h1 {
+.main-container {
+  background-image: url("https://assets.ccbp.in/frontend/react-js/ipl-dashboard-sm-bg.png");
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  overflow-y: scroll;
+}
+
+.dashboard-heading {
   color: #ffffff;
   font-family: "Bree Serif";
+  text-align: center;
+  font-size: 2.5rem;
 }
-
+.top-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .IplDashboardContainer {
-  background-image: url("https://assets.ccbp.in/frontend/react-js/ipl-dashboard-sm-bg.png");
-  height: 100vh;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
 }
+.bottom-section {
+  padding: 0 15% 0 15%;
+}
+.ipl-logo {
+  width: 50px;
 
+  object-fit: fill;
+}
 .teamsContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 90vh;
   width: 100%;
 }
 .teams {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
   list-style: none;
-}
-@media screen and (min-width: 768px) {
-  .iplHeading {
-    font-size: 50px;
-  }
-  .IplDashboardContainer {
-    background-image: url("https://assets.ccbp.in/frontend/react-js/ipl-dashboard-lg-bg.png");
-  }
+  padding: 0px;
 }

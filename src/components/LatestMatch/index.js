@@ -28,15 +28,15 @@ const LatestMatch = (props) => {
           alt={`latest match ${competingTeam}`}
         />
       </div>
-      <div>
-        <p className="leftAlign">First Innings</p>
-        <p className="leftAlign">{firstInnings}</p>
-        <p className="leftAlign">Second Innings</p>
-        <p className="leftAlign">{secondInnings}</p>
-        <p className="leftAlign">Man of the match</p>
-        <p className="leftAlign">{ManOfTheMatch}</p>
-        <p className="leftAlign">Umpires</p>
-        <p className="leftAlign">{umpires}</p>
+      <div className="leftAlign">
+        <p>First Innings</p>
+        <p>{firstInnings}</p>
+        <p>Second Innings</p>
+        <p>{secondInnings}</p>
+        <p>Man of the match</p>
+        <p>{ManOfTheMatch}</p>
+        <p>Umpires</p>
+        <p>{umpires}</p>
       </div>
     </div>
   );

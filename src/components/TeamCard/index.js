@@ -6,7 +6,7 @@ const TeamCard = (props) => {
   const { teamDetails } = props;
   const { name, id, teamImageUrl } = teamDetails;
   return (
-    <Link to={`/team-matches/${id}`}>
+    <Link to={`/team-matches/${id}`} style={{ textDecoration: "none" }}>
       <li className="singelTeam">
         <img src={teamImageUrl} className="team-logo" alt={name} />
         <div>

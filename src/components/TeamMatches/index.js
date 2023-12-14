@@ -6,6 +6,8 @@ import MatchCard from "../MatchCard";
 
 import Loader from "react-loader-spinner";
 
+import { PieChart, Pie, Cell } from "recharts";
+
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 import "./index.css";
@@ -88,6 +90,32 @@ class TeamMatches extends Component {
   componentDidMount() {
     this.getTeamMatchDetails();
   }
+  onClickBackBtn = () => {
+    const { history } = this.props;
+    history.replace("/");
+  };
+
+  getData = () => {
+    const { recentMatch } = this.state;
+    let wonCount = 0;
+    let lossCount = 0;
+    let drawCount = 0;
+    for (let i = 0; i < recentMatch.length; i++) {
+      if (recentMatch[i].matchStatus === "Won") {
+        wonCount = wonCount + 1;
+      } else if (recentMatch[i].matchStatus === "Lost") {
+        lossCount = lossCount + 1;
+      } else {
+        drawCount = drawCount + 1;
+      }
+    }
+    return [
+      { name: "Won", value: wonCount },
+      { name: "Lost", value: lossCount },
+      { name: "Draw", value: drawCount },
+    ];
+  };
+
   render() {
     const {
       team,
@@ -96,15 +124,26 @@ class TeamMatches extends Component {
       recentMatch,
       teamBannerUrl,
     } = this.state;
+    console.log(recentMatch);
+    const newList = this.getData();
+    console.log(newList);
 
+    const COLORS = ["#18ed66", "#e31a1a", "#FFBB28"];
     return (
-      <div className={`background-color ${team}`}>
+      <main className={`team-main-container ${team}`}>
         {isLoading ? (
-          <div testid="loader">
+          <div testid="loader" className="loader-container">
             <Loader type="Oval" color="#ffffff" height={50} width={50} />
           </div>
         ) : (
-          <div>
+          <div className="team-match-container">
+            <button
+              type="button"
+              className="back-btn"
+              onClick={this.onClickBackBtn}
+            >
+              Back
+            </button>
             <div className="banner-container">
               <img
                 src={teamBannerUrl}
@@ -112,13 +151,35 @@ class TeamMatches extends Component {
                 alt="team banner"
               />
             </div>
-            <h1>Latest Matches</h1>
-            <br />
             <div>
+              <h1>Latest Matches</h1>
               <LatestMatch
                 details={latestMatchesDetails}
                 key={latestMatchesDetails.id}
               />
+            </div>
+            <div className="pie-chart">
+              <PieChart width={400} height={400}>
+                <Pie
+                  data={newList}
+                  dataKey="value"
+                  name="name"
+                  startAngle={180}
+                  endAngle={0}
+                  cx="50%"
+                  cy="80%"
+                  outerRadius={"100%"}
+                  fill="#000"
+                  label={{ fontSize: "2rem" }}
+                >
+                  {newList.map((entry, index) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={COLORS[index % COLORS.length]}
+                    />
+                  ))}
+                </Pie>
+              </PieChart>
             </div>
             <ul className="recent-Matches">
               {recentMatch.map((eachMatch) => (
@@ -127,7 +188,7 @@ class TeamMatches extends Component {
             </ul>
           </div>
         )}
-      </div>
+      </main>
     );
   }
 }

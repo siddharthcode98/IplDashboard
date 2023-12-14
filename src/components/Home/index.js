@@ -33,24 +33,35 @@ class Home extends Component {
   render() {
     const { listOfIplTeams, isLoading } = this.state;
     return (
-      <div className="IplDashboardContainer">
-        <div className="teamsContainer">
-          <h1>Ipl Dashboard</h1>
-          {isLoading ? (
-            <li>
-              <div data-testid="loader">
-                <Loader type="Oval" color="#ffffff" height={50} width={50} />
-              </div>
-            </li>
-          ) : (
-            <ul className="teams">
-              {listOfIplTeams.map((eachTeam) => (
-                <TeamCard teamDetails={eachTeam} key={eachTeam.id} />
-              ))}
-            </ul>
-          )}
-        </div>
-      </div>
+      <main className="main-container">
+        {isLoading ? (
+          <div data-testid="loader" className="loader-container">
+            <Loader type="Oval" color="#ffffff" height={50} width={50} />
+          </div>
+        ) : (
+          <>
+            <div className="IplDashboardContainer">
+              <section className="bottom-section">
+                <div className="teamsContainer">
+                  <section className="top-section">
+                    <img
+                      src="https://assets.ccbp.in/frontend/react-js/ipl-logo-img.png"
+                      alt="ipl logo"
+                      className="ipl-logo"
+                    />
+                    <h1 className="dashboard-heading">Ipl Dashboard</h1>
+                  </section>
+                  <ul className="teams">
+                    {listOfIplTeams.map((eachTeam) => (
+                      <TeamCard teamDetails={eachTeam} key={eachTeam.id} />
+                    ))}
+                  </ul>
+                </div>
+              </section>
+            </div>
+          </>
+        )}
+      </main>
     );
   }
 }
